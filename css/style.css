@@ -1,0 +1,304 @@
+/*
+
+Ultra Profile
+
+https://templatemo.com/tm-464-ultra-profile
+
+*/
+body {
+    font-family: 'Montserrat', sans-serif; /* Apply Montserrat as default font */
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    padding-top: 70px; /* Adjust based on navbar height */
+}
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+h1, h2, h3 { 
+    font-weight: 300;
+    text-align: center;
+    padding-top: 100px; /* Adjust if needed */
+    padding-bottom: 50px;
+    font-size: 80px;
+    font-weight: 600; 
+}
+p { 
+    line-height: 28px; 
+}
+hr {
+    border-color: #f2f2f2;
+    width: 100px;
+    margin-bottom: 40px;
+}
+.title {
+    color: #303030;
+    font-size: 60px;
+    padding-bottom: 40px;
+    text-transform: uppercase;
+}
+
+/* START NAVIGATION */
+.sticky-navigation { opacity: 0; }
+.navbar-default {
+    background: #fff;
+    border: none;
+    -webkit-box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+    box-shadow: 0 2px 8px 0 rgba(50, 50, 50, 0.08);
+    margin: 0;
+    padding: 0;
+    position: fixed; /* Keeps the navbar fixed */
+    top: 0; /* Aligns navbar to the top */
+    width: 100%; /* Ensures it takes the full width */
+    z-index: 1000; /* Keeps the navbar on top of other elements */
+}
+.navbar-default .navbar-brand {
+    color: #212227;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 45px;
+    padding: 10px 0 0 12px;
+}
+.navbar-default .navbar-nav li a {
+    color: #202020;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 45px;
+    letter-spacing: 1px;
+}
+.navbar-default .navbar-nav li a:hover { 
+    color: #eb5424; 
+}
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #eb5424;
+    background-color: transparent;
+}
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: #eb5424;
+    background-color: transparent;
+}
+.navbar-default .navbar-toggle {
+    border: none;
+    padding-top: 10px;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background: rgb(235, 84, 36);
+    border-color: transparent;
+}
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus { 
+    background-color: transparent; 
+}
+/* END NAVIGATION */
+
+
+/* START CONTACT */
+.tm-contact {
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+.form-control {
+  background: transparent;
+  border: 1px solid #666;
+  border-radius: 2px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-bottom: 10px;
+  -webkit-transition: all 0.6s ease-in;
+          transition: all 0.6s ease-in;
+}
+.form-control:focus,
+ .form-control:hover {
+  background: #202020;
+  color: #ffffff;
+}
+input { height: 50px; }
+.tm-contact p { padding-top: 40px; }
+/* END CONTACT */
+
+@media screen and (max-device-width: 1024px){
+  .templatemo-home {
+    background-attachment: scroll;
+  }
+}
+
+/* START MEDIA 980 */
+@media screen and (max-width:980px){
+  .portfolio-overlay  { padding-top: 10px; }
+}
+/* END MEDIA 980 */
+
+@media screen and (max-width: 767px) {
+  .tm-home-title { font-size: 40px; }
+}
+
+/* START MEDIA 360 */
+@media screen and (max-width:360px){
+  .navbar-default .navbar-brand {  padding-top: 2px; }
+}
+/* END MEDIA 360 */
+
+
+
+/* Projects Section */
+/* Projects Section */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  opacity: 0; /* Start hidden for animation */
+  transform: translateX(50px); /* Start slightly off-screen */
+  animation: slideIn 0.5s forwards; /* Trigger animation */
+}
+
+@keyframes slideIn {
+  0% {
+      opacity: 0;
+      transform: translateX(50px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateX(0);
+  }
+}
+
+.project-box {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 8px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0; /* Start hidden for animation */
+  animation: fadeIn 0.5s forwards; /* Trigger animation */
+  margin-right: 20px;
+  margin-left: 20px;
+  height: 350px;
+}
+
+@keyframes fadeIn {
+  to {
+      opacity: 1;
+  }
+}
+
+.project-box:nth-child(odd) {
+  animation-delay: 0.1s; /* Delay for odd boxes */
+}
+
+.project-box:nth-child(even) {
+  animation-delay: 0.2s; /* Delay for even boxes */
+}
+
+.project-box:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Change shadow on hover */
+  border: 3px solid #e33434;
+  transform: none; /* Remove movement on hover */
+}
+
+
+.project-box .full-link {
+  display: block; /* Make the anchor tag a block element */
+  height: 100%; /* Fill the height of the box */
+  width: 100%; /* Fill the width of the box */
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+}
+
+.project-1 {
+  background-image: url('../images/kokos.jpg');
+  background-size: cover;
+  
+}
+
+.project-2 {
+  background-image: url('../images/utilitrack.jpg');
+  background-size: cover;
+  
+}
+
+.project-3 {
+  background-image: url('../images/waste.jpg');
+  background-size: cover;
+  
+}
+
+.project-4 {
+  background-image: url('../images/dinu.jpg');
+  background-size: cover;
+  
+}
+
+
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    justify-items: center;
+    padding: 20px;
+}
+
+.project-box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #f57c00;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border: 3px solid #e33434;
+}
+
+.project-box:hover {
+    transform: translateY(-10px);
+}
+
+.project-hover {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(235, 84, 36);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: bottom 0.3s ease;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.project-box:hover .project-hover {
+    bottom: 0;
+}
+
+
+
+@media (min-width: 768px) {
+    .project-box {
+        width: 350px;
+        height: 250px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .project-box {
+        width: 400px;
+        height: 300px;
+    }
+}

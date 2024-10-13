@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/templatemo-style.css">
+    <link rel="icon" type="image/png" href="./images/Untitled-1.png">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+        }
+        .header {
+            background-color: #ff5e2d; /* Change to your desired color */
+            position: relative;
+            height: 600px; /* Adjust as needed */
+            display: flex;
+            flex-direction: column; /* Arrange children vertically */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
+        .header img {
+            width: 800px; /* Adjust the width of the header image */
+            height: 500px; /* Maintain aspect ratio */
+            margin-top: 20px; /* Add space from the header title */
+            z-index: 1;
+        }
+        .header h1 {
+            color: rgb(255, 255, 255);
+            z-index: 2; /* Ensures the text appears above the image */
+            margin-top: 300px; /* Remove margin for proper alignment */
+            padding: 10px; /* Optional: add some padding */
+            font-size: 70px;
+            font-style: bold;
+        }
+        .content {
+            padding: 20px;
+            margin-top: 200px;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        #projectDescription {
+        font-size: 30px;
+        font-weight: bold;
+        text-align: center;
+        margin-bottom: 150px; /* Adds space below description */
+        }
+        #projectProblem {
+            margin-bottom: 70px;
+        }
+        #projectResults {
+            margin-bottom: 70px;
+        }
+        #projectdesignprocess {
+            margin-bottom: 70px;
+        }
+        h2 {
+            color: black; /* Changes the color of h2 tags to black */
+        }
+        .project-image {
+            width: 100%; /* Full width of the container */
+            max-width: 400px; /* Maximum width for larger screens */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 8px; /* Optional: to give rounded corners */
+            margin: 10px 0; /* Space around images */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1 id="projectTitle">Project Title</h1>
+        <img src="path/to/your/background-image.png" alt="Project Background" id="projectImage">
+    </div>
+
+    <!-- Content Section -->
+    <div class="container content">
+        <div class="section">
+            
+            <p id="projectDescription" style="font-size: 30px; font-weight: bold; text-align: center">Your project description goes here.</p>
+             <!-- This will show your project image -->
+        </div>
+        <div class="section">
+            <h2>Problem</h2>
+            <p id="projectProblem">Describe the problem your project addresses.</p>
+        </div>
+        <div class="section">
+            <h2>Research & Strategy</h2>
+            <p id="projectResults">Summarize your research results related to the project.</p>
+        </div>
+        <div class="section">
+            <h2>Design Process</h2>
+            <p id="projectdesignprocess">Summarize your research results related to the project.</p>
+        </div>
+        <div class="section">
+            <h2>Figma Design</h2>
+            <p> <a href="#" id="figmaLink" target="_blank">View Figma Design</a></p>
+        </div>
+    </div>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script>
+        // Function to get URL parameters
+        function getQueryParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Get the project ID from the URL
+        const projectId = getQueryParameter('project');
+
+        // Mock project data (replace with your actual data)
+        const projects = {
+            1: {
+                title: "KOKOS Coconut Production Webpage UI",
+                description: "KOKOS is a website designed to showcase cosmetic products made from coconuts. The goal was to create a modern and intuitive website that would appeal to the target audience while emphasizing the unique value of the products.",
+                problem: "The challenge was to design a visually engaging website that highlights the natural benefits of coconut-based cosmetics while making it easy for customers to browse and purchase products.",
+                results: "We conducted user research to understand potential buyers’ interests and behavior. This included developing personas based on demographic research and conducting a competitive analysis of similar products in the market.",
+                figmaLink: "https://www.figma.com/design/DIJhYMYfIzuZICSUfsXV3Z/HCI-UI-Design?node-id=0-1&t=5iuLNEa0LpvCb6Y4-1",
+                deisgnprocess:"We conducted user research to understand potential buyers’ interests and behavior. This included developing personas based on demographic research and conducting a competitive analysis of similar products in the market.",
+                image: "images/kokos1.jpg"
+            },
+            2: {
+                title: "UTILITRACK App UI Design",
+                description: "UTILITRACK is a mobile app designed to streamline utility bill payments, combining both electricity and water services into one application. This app aims to save users time by eliminating the need for separate payment apps.",
+                problem: "The challenge was that users had to use different apps to manage their electricity and water bill payments, leading to inefficiency and user frustration.",
+                results: "Surveys and interviews were conducted to identify user frustrations. Personas were developed to capture the needs of users who wanted an all-in-one solution for managing their utility payments.",
+                figmaLink: "https://www.figma.com/design/q1Xl7wq5JGsMNLQZEEYHOc/ICT4D?node-id=0-1&t=pnvCojIsONGbIbS2-1",
+                deisgnprocess:"Wireframes focused on ease of use and integration of both utility services into one cohesive interface. Figma prototypes were developed and tested with users to ensure intuitive navigation and functionality.",
+                image: "images/utilitrack1.jpg"
+            },
+            3: {
+                title: "WASTE WIZARD App UI Design",
+                description: "WASTE WIZARD is a mobile app designed to enhance the garbage recycling process in the Colombo district. The app allows users to interact with the Municipal Council and earn points for recycling, which can be redeemed for rewards at supermarkets.",
+                problem: "The existing recycling system was inefficient and lacked user engagement, making it difficult for the Municipal Council to encourage residents to participate in recycling programs.",
+                results: "Field studies and interviews with residents were conducted to understand recycling habits and challenges. Personas were developed to represent different user groups. A competitive analysis of other recycling apps helped identify key features for improving user interaction.",
+                figmaLink: "https://www.figma.com/design/klbeF1GJI3FES1SvF6hDhH/Waste-Wizard?node-id=1-23",
+                deisgnprocess:"Wireframes were created to streamline the recycling process and reward system. Prototypes were tested to ensure users could easily navigate the app and understand how to earn points.",
+                image: "images/waste1.jpg"
+            },
+            4: {
+                title: "Dinuka Gunawardane Portfolio",
+                description: "This portfolio is designing for a client to showcase their professional work and projects. The goal was to create a clean and elegant design that highlights their skills and helps them attract potential clients.",
+                problem: "The client needed a well-designed online presence to effectively showcase their work and gain new opportunities.",
+                results: "A design audit of competitor portfolios was conducted to identify best practices. Personas were developed to understand the potential audience and tailor the design accordingly.",
+                figmaLink: "https://sasinitennakoon.github.io/Dinuka_Gunawardana/",
+                deisgnprocess:"Wireframes and design mockups were created in Figma, with a focus on a simple, professional layout. Testing was conducted to ensure the portfolio was easy to navigate and visually appealing.",
+                image: "images/din1.jpg"
+            },
+            5: {
+                title: "Eco Shopper Mobile App",
+                description: "Eco Shopper is a mobile app designed to promote eco-friendly shopping. The app helps users make sustainable choices by offering recommendations for environmentally friendly products, showing carbon footprint information, and tracking eco-friendly shopping habits.",
+                problem: "Many consumers want to shop sustainably but struggle to find reliable information on eco-friendly products and their environmental impact. There is also a lack of tools that help users track their sustainable shopping habits.",
+                results: "Surveys and interviews were conducted to identify the most important features for eco-conscious consumers. The research revealed a demand for transparency regarding product sustainability, and the app was designed to include features that track eco-impact, show product ratings, and offer shopping rewards for sustainable choices.",
+                figmaLink: "https://www.figma.com/design/P5xL6L7hzBA5kDEhlDs3FS/Eco-Shopper?node-id=0-1&t=kQEc8hcapTHlNbH8-1",
+                deisgnprocess:" Wireframes were created to ensure a user-friendly experience that encourages sustainable shopping. Prototypes were tested with target users to refine the app's layout and features, such as product recommendation lists, carbon footprint calculators, and shopping habit trackers.",
+                image: "images/eco1.jpg"
+            },
+            6: {
+                title: "BookNest Mobile App",
+                description: "BookNest is a mobile app designed for book lovers. It offers personalized book recommendations, allows users to create reading lists, write reviews, join book clubs, and find nearby literary events. The app also integrates with e-book stores and features a virtual bookshelf.",
+                problem: " Book lovers often face challenges in discovering new books, organizing their reading lists, and connecting with other readers. Existing solutions lacked personalization and community-driven features.",
+                results: "User research revealed that readers desired a more personalized and social experience when discovering books. Personas were created to represent different types of readers, and the app's features were designed to meet these varied needs, from casual readers to book club members.",
+                figmaLink: "https://www.figma.com/design/XFCbIW2bF9mZVT0nTgYbks/BookNest-Mobile-App?node-id=0-1&t=SqDw9kxfqKVDuBNY-1",
+                deisgnprocess:"After developing the user personas, wireframes and high-fidelity prototypes were created, focusing on ease of navigation and integration with e-book stores. User testing sessions helped refine the app's recommendation algorithm, virtual bookshelf, and community features, ensuring a seamless experience for book enthusiasts."
+
+,
+                image: "images/.jpg"
+            }
+            // Add more projects as needed
+        };
+
+        // Display project details based on the project ID
+        if (projects[projectId]) {
+            const project = projects[projectId];
+            document.getElementById('projectTitle').textContent = project.title;
+            document.getElementById('projectDescription').textContent = project.description;
+            document.getElementById('projectProblem').textContent = project.problem;
+            document.getElementById('projectResults').textContent = project.results;
+            document.getElementById('figmaLink').href = project.figmaLink;
+            document.getElementById('projectImage').src = project.image; // Update image source
+            document.getElementById('projectdesignprocess').textContent=project.deisgnprocess;
+        } else {
+            document.getElementById('projectTitle').textContent = "Project Not Found";
+            document.getElementById('projectDescription').textContent = "No details available.";
+        }
+    </script>
+</body>
+</html>
